@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.CosmicAeroGolf.CSharp.Plugins", "UnityVS.CosmicAeroGolf.CSharp.Plugins.csproj", "{ACC44F95-B16F-F643-5522-18ECF579056D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.CosmicAeroGolf.CSharp", "UnityVS.CosmicAeroGolf.CSharp.csproj", "{DCC5D93A-E7A2-0837-0CA7-B493D2B2BCD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.CosmicAeroGolf.CSharp.Editor", "UnityVS.CosmicAeroGolf.CSharp.Editor.csproj", "{C864442F-6FE8-515B-ED5C-47424335007F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACC44F95-B16F-F643-5522-18ECF579056D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC44F95-B16F-F643-5522-18ECF579056D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC44F95-B16F-F643-5522-18ECF579056D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC44F95-B16F-F643-5522-18ECF579056D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC5D93A-E7A2-0837-0CA7-B493D2B2BCD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC5D93A-E7A2-0837-0CA7-B493D2B2BCD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC5D93A-E7A2-0837-0CA7-B493D2B2BCD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC5D93A-E7A2-0837-0CA7-B493D2B2BCD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C864442F-6FE8-515B-ED5C-47424335007F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C864442F-6FE8-515B-ED5C-47424335007F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C864442F-6FE8-515B-ED5C-47424335007F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C864442F-6FE8-515B-ED5C-47424335007F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
