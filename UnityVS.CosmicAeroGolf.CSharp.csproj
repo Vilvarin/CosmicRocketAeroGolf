@@ -74,11 +74,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\MyCam.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\RotateAroundSun.cs" />
-    <Compile Include="Assets\Scripts\Spin.cs" />
-    <Compile Include="Assets\Scripts\script.cs" />
+    <Compile Include="Assets\CRAG\AchievementSystem\AchievementEventArgs.cs" />
+    <Compile Include="Assets\CRAG\AchievementSystem\AchievementManager.cs" />
+    <Compile Include="Assets\CRAG\AchievementSystem\Achievements.cs" />
+    <Compile Include="Assets\CRAG\InputSystem\Commands\DescendCommand.cs" />
+    <Compile Include="Assets\CRAG\InputSystem\Commands\EnterCommand.cs" />
+    <Compile Include="Assets\CRAG\InputSystem\Commands\ICommand.cs" />
+    <Compile Include="Assets\CRAG\InputSystem\Commands\ImpulseCommand.cs" />
+    <Compile Include="Assets\CRAG\InputSystem\InputHandler.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Creators\AsteroidsCreator.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Creators\BonusCreator.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Creators\CometCreator.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\Bonus.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\DestroyerObject.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\DisappearedOnTime.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\DisappearedOncollision.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\GameActor.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\Gravity.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\IsometricCamera.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\LookAtTheCamera.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\RandomText.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\RotateAroundPivot.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\RotateAroundSun.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\SearchCollider.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\Spin.cs" />
+    <Compile Include="Assets\CRAG\Scripts\UI\AchievementViewer.cs" />
+    <Compile Include="Assets\CRAG\Scripts\UI\PointsCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
@@ -159,11 +182,6 @@
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
-    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
