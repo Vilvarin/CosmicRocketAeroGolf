@@ -2,10 +2,13 @@
 
 namespace CRAG.AchievementSystem
 {
+    /// <summary>
+    /// Аргументы событий для системы ачивок
+    /// </summary>
     public class AchievementEventArgs : EventArgs
     {
-        public string message;
-        public bool register;
+        public string message; ///<value>Сообщение выводимое при получении ачивки</value>
+        public bool register; ///<value>Была ли разблокирована данная ачивка</value>
 
         public AchievementEventArgs(bool register, string message)
         {

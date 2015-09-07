@@ -3,11 +3,17 @@ using System.Collections;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Фабрика монеток. Создаёт монетки из префаба вокруг создателя.
+    /// </summary>
     public class BonusCreator : MonoBehaviour
     {
-        public GameObject coin;
-        public float radius;
-        public int count;
+        ///<summary>Префаб монетки</summary>
+        public GameObject coin; 
+        ///<summary>Расстояние от создателя</summary>
+        public float radius = 1; 
+        ///<summary>Количество монеток</summary>
+        public int count = 5; 
 
         private Transform _transform;
 

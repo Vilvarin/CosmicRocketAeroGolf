@@ -3,7 +3,10 @@ using UnityEngine;
 
 namespace CRAG.InputSystem
 {
-    public class ImpulseCommand : ICommand
+    /// <summary>
+    /// Задать импульс шайбе.
+    /// </summary>
+    public class ImpulseCommand : ICommand<GameActor>
     {
         public void Execute(GameActor actor)
         {

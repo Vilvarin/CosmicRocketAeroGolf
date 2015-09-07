@@ -7,7 +7,7 @@ using UnityEngine;
 namespace UnityStandardAssets.Cameras
 {
     [ExecuteInEditMode]
-    public class MyCam : PivotBasedCameraRig
+    public class IsometricCamera : PivotBasedCameraRig
     {
         [SerializeField]
         private float m_MoveSpeed = 10; // How fast the rig will move to keep up with target's position

@@ -15,6 +15,7 @@ namespace CRAG
 
         void Start()
         {
+            _text = GetComponent<Text>();
             _startColor = _text.color;
             _endColor = new Color(_startColor.r, _startColor.g, _startColor.b, 0);
             AchievementManager.instance.achievementUnlockedAction += ViewAchievement;
@@ -30,10 +31,10 @@ namespace CRAG
         private IEnumerator LerpColor()
         {
             float t = 0;
-            while(t < 0)
+            while(t < timer)
             {
                 _text.color = Color.Lerp(_startColor, _endColor, t/timer);
-                t -= Time.deltaTime;
+                t += Time.deltaTime;
                 yield return null;
             }
         }

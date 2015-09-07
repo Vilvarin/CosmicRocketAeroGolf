@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CRAG
 {
-    class SearchCollider : MonoBehaviour
+    public class SearchCollider : MonoBehaviour
     {
         public GameActor actor;
         public string detectedTag = "detected";
@@ -24,7 +24,10 @@ namespace CRAG
 
         public Collider GetDetectedCollider()
         {
-            return _detected[0];
+            if (_detected.Count != 0)
+                return _detected[0];
+            else
+                return null;
         }
     }
 }

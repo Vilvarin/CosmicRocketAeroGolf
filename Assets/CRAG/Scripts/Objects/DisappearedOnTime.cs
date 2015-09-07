@@ -3,8 +3,12 @@ using System.Collections;
 
 namespace CRAG
 {
-    public class DisappearedHalo : MonoBehaviour
+    /// <summary>
+    /// Скрипт для объектов уничтожающихся по истечении времени.
+    /// </summary>
+    public class DisappearedOnTime : MonoBehaviour
     {
+        /// <summary>Таймер, по истечении которого объект будет уничтожен</summary> 
         public float timer = 1;
 
         void Update()
@@ -13,6 +17,8 @@ namespace CRAG
             {
                 Destroy(gameObject);
             }
+
+            timer -= Time.deltaTime;
         }
     }
 }

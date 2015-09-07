@@ -3,7 +3,10 @@ using System;
 
 namespace CRAG.InputSystem
 {
-    public class EnterCommand : ICommand
+    /// <summary>
+    /// Команда "Выйти на орбиту".
+    /// </summary>
+    public class EnterCommand : ICommand<GameActor>
     {
         public void Execute(GameActor actor)
         {

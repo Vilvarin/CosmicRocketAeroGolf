@@ -8,7 +8,7 @@ namespace CRAG
     {
         [TextArea]
         public List<string> facts;
-        public Text text;
+        public TextMesh text;
 
         public void OnDisplayFact()
         {

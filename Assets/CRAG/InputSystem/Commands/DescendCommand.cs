@@ -3,7 +3,10 @@ using System.Collections;
 
 namespace CRAG.InputSystem
 {
-    public class DescendCommand : ICommand
+    /// <summary>
+    /// Команда "сойти с орбиты".
+    /// </summary>
+    public class DescendCommand : ICommand<GameActor>
     {
         public void Execute(GameActor actor)
         {

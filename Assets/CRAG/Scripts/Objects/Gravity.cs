@@ -9,12 +9,17 @@ namespace CRAG
 
         private Transform _transform;
 
+        void Start()
+        {
+            _transform = GetComponent<Transform>();
+        }
+
         void OnTriggerEnter(Collider other)
         {
             if (other.transform.name == "Player")
             {
                 other.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                StartCoroutine("Gravity", other.transform);
+                StartCoroutine("DragIn", other.transform);
             }
         }
 
@@ -30,7 +35,10 @@ namespace CRAG
                 yield return null;
             }
 
-            GameManager.instance.Win();
+            Destroy(gameObject.GetComponent<Rigidbody>());
+
+            if (other.name == "Player")
+                GameManager.instance.Win();
         }
     }
 }
