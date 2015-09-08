@@ -3,8 +3,12 @@ using System.Collections;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Скрипт для объекта притягивающего другие объекты при вхождении в триггер
+    /// </summary>
     public class Gravity : MonoBehaviour
     {
+        /// <summary>Время за которое объект пройдёт расстояние до чёрной дыры</summary>
         public float gravityTime;
 
         private Transform _transform;

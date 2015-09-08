@@ -70,10 +70,10 @@ namespace CRAG
         }
         
         /// <summary>
-        /// Рассчитывает напрвление силы импульса, исходя
+        /// Рассчитывает напрвление силы импульса, исходя из положения курсора относительно персонажа
         /// </summary>
-        /// <param name="hit"></param>
-        /// <returns></returns>
+        /// <param name="hit">Возвращает информацию о рэйкасте</param>
+        /// <returns>Нормализованный вектор от персонажа к курсору</returns>
         private Vector3 CalculateForceDirection(out RaycastHit hit)
         {
             Vector3 forceDirection = Vector3.zero;

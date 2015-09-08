@@ -47,7 +47,7 @@ namespace CRAG
         {
             InputHandler.instance.playerState = false;
             Destroy(player.gameObject);
-            UIManager.instance.ShowWinPanel(points);
+            UIManager.instance.ShowWinPanel();
         }
 
         /// <summary>

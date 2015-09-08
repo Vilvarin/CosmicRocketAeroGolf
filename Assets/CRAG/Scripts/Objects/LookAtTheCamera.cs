@@ -1,13 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LookAtTheCamera : MonoBehaviour
+namespace CRAG
 {
-    public Transform cam;
-
-    void Update()
+    /// <summary>
+    /// Скрипт для разворота объекта к камере.
+    /// </summary>
+    public class LookAtTheCamera : MonoBehaviour
     {
-        transform.LookAt(cam);
-        transform.Rotate(Vector3.up, 180f);
+        /// <summary>Камера в которую будем смотреть</summary>
+        public Transform cam;
+
+        void Update()
+        {
+            transform.LookAt(cam);
+            transform.Rotate(Vector3.up, 180f);
+        }
     }
 }
+

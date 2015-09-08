@@ -3,11 +3,15 @@ using System.Collections;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Скрипт для объектов вращающихся вокруг родителя
+    /// </summary>
     public class RotateAroundPivot : MonoBehaviour
     {
         private Transform _parent;
         private Transform _transform;
 
+        /// <summary>Скорость вращения</summary>
         public float speed;
 
         void Start()

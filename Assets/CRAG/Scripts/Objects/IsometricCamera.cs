@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Cameras
 {
+    /// <summary>
+    /// Камера, отслеживающая положение объекта. Не поворачивается при повороте объекта в отличии от стандартной.
+    /// </summary>
     [ExecuteInEditMode]
     public class IsometricCamera : PivotBasedCameraRig
     {

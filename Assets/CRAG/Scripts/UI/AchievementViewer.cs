@@ -5,12 +5,19 @@ using CRAG.AchievementSystem;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Скрипт элемента UI для отображения ачивок.
+    /// </summary>
+    /// <remarks>Выведенный текст будет исчезать со временем</remarks>
     public class AchievementViewer : MonoBehaviour
     {
+        /// <summary>Время за которое исчезнет текст</summary>
         public float timer = 10f;
 
         private Text _text;
+        //Стартовый цвет берётся из компонента Текст
         private Color _startColor;
+        //Конечный цвет отличается только альфа-каналом
         private Color _endColor;
 
         void Start()

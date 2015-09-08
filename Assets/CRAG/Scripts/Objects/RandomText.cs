@@ -4,21 +4,32 @@ using System.Collections.Generic;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Скрипт для вывода случайного текста из списка.
+    /// </summary>
     public class RandomText : MonoBehaviour
     {
+        /// <summary>Набор текстов</summary>
         [TextArea]
-        public List<string> facts;
-        public TextMesh text;
+        public List<string> texts;
+        /// <summary>Объект для вывода</summary>
+        public TextMesh view;
 
-        public void OnDisplayFact()
+        /// <summary>
+        /// Отобразить случайный текст
+        /// </summary>
+        public void OnDisplayText()
         {
-            string fact = facts[Random.Range(0, facts.Count - 1)];
-            text.text = fact;
+            string text = texts[Random.Range(0, texts.Count - 1)];
+            view.text = text;
         }
 
-        public void OffDisplayFact()
+        /// <summary>
+        /// Очистить текстовую строку
+        /// </summary>
+        public void OffDisplayText()
         {
-            text.text = "";
+            view.text = "";
         }
     }
 }

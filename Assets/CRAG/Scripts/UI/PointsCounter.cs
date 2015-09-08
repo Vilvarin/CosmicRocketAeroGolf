@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Скрипт элемента UI для отображения очков
+    /// </summary>
     public class PointsCounter : MonoBehaviour
     {
         private Text text;
