@@ -20,7 +20,7 @@ namespace CRAG
         /// </summary>
         public void OnDisplayText()
         {
-            string text = texts[Random.Range(0, texts.Count - 1)];
+            string text = texts[Random.Range(0, texts.Count)];
             view.text = text;
         }
 

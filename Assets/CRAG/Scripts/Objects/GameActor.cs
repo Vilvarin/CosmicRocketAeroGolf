@@ -21,6 +21,8 @@ namespace CRAG
 
         private Transform _transform;
         private Rigidbody _rigidbody;
+        private RandomText _randomText;
+        private bool _onOrbitState = false;
 
         void Start()
         {
@@ -35,7 +37,7 @@ namespace CRAG
         {
             RaycastHit hit;
             Vector3 forceDirection = CalculateForceDirection(out hit);
-            Instantiate(click, hit.point, Quaternion.identity); //проще было бы инстанцировать отметку клика внутри функции расчёта силы, но это
+            Instantiate(click, hit.point, Quaternion.identity);
             _rigidbody.AddForce(forceDirection * forceMagnitude, ForceMode.Impulse);
         }
 
@@ -54,10 +56,13 @@ namespace CRAG
                 if (detected.name == "Pluton")
                     AchievementManager.instance.UnlockAchievement(Achievements.TakeInPluton);
 
+                _randomText = detected.GetComponent<RandomText>();
+                if (_randomText != null)
+                    _randomText.OnDisplayText();
+
+                _onOrbitState = true;
+
                 _transform.parent = detected.transform;
-                Vector3 radius = _transform.parent.position - _transform.position;
-                Vector3 tangent = new Vector3(-radius.z, 0, radius.x);
-                _rigidbody.velocity = Vector3.Project(_rigidbody.velocity, tangent);
             }
         }
 
@@ -67,13 +72,17 @@ namespace CRAG
         public void DescendFromOrbit()
         {
             _transform.parent = null;
+            if (_randomText != null)
+                _randomText.OffDisplayText();
+            _randomText = null;
+            _onOrbitState = false;
         }
         
         /// <summary>
         /// Рассчитывает напрвление силы импульса, исходя из положения курсора относительно персонажа
         /// </summary>
         /// <param name="hit">Возвращает информацию о рэйкасте</param>
-        /// <returns>Нормализованный вектор от персонажа к курсору</returns>
+        /// <returns>Нормализованный вектор от курсора к персонажу</returns>
         private Vector3 CalculateForceDirection(out RaycastHit hit)
         {
             Vector3 forceDirection = Vector3.zero;
@@ -86,6 +95,16 @@ namespace CRAG
             }
 
             return forceDirection;
+        }
+
+        void Update()
+        {
+            if (_onOrbitState)
+            {
+                Vector3 radius = _transform.parent.position - _transform.position;
+                Vector3 tangent = new Vector3(-radius.z, 0, radius.x);
+                _rigidbody.velocity = Vector3.Project(_rigidbody.velocity, tangent);
+            }
         }
     }
 }

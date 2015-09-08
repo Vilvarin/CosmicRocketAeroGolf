@@ -22,5 +22,13 @@ namespace UnityStandardAssets.Cameras
 
             transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime * m_MoveSpeed);
         }
+
+        /// <summary>
+        /// Изменить положение камеры
+        /// </summary>
+        public void Zoom(float scroll)
+        {
+            m_Pivot.localPosition += new Vector3(0, 0, scroll) * 10;
+        }
     }
 }
