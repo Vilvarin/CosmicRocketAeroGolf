@@ -41,7 +41,6 @@ namespace CRAG
             //инстанцированной комете задаётся начальная скорость. Квадрат коэффициента Z делает параболу достаточно крутой.
             instComet.velocity = new Vector3(XFactor, 0, 2 * ZFactor * ZFactor);
             ConstantForce force = instance.GetComponent<ConstantForce>();
-            //ускорение отрицательное, чтобы комета начинала путь не с экстремума, а на "ветви" параболы.
             force.force = new Vector3(0, 0, -ZFactor);
         }
     }

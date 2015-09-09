@@ -29,6 +29,11 @@ namespace UnityStandardAssets.Cameras
         public void Zoom(float scroll)
         {
             m_Pivot.localPosition += new Vector3(0, 0, scroll) * 10;
+
+            if (m_Pivot.localPosition.z > -15)
+                m_Pivot.localPosition = new Vector3(0, 0, -15);
+            else if (m_Pivot.localPosition.z < -100)
+                m_Pivot.localPosition = new Vector3(0, 0, -100);
         }
     }
 }

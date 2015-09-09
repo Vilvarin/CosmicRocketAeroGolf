@@ -44,7 +44,6 @@ namespace CRAG
         /// <summary>
         /// Выход на орбиту планеты.
         /// </summary>
-        /// <remarks>Скорость вращения персонажа по орбите рассчитывается с учётом угла, под которым был выполнен выход.</remarks>
         public void EnterOrbit()
         {
             Collider detected = searchSphere.GetDetectedCollider();
@@ -97,6 +96,7 @@ namespace CRAG
             return forceDirection;
         }
 
+        //Расчёт вектора скорости при движении по орбите
         void Update()
         {
             if (_onOrbitState)

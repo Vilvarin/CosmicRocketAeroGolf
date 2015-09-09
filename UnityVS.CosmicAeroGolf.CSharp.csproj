@@ -102,6 +102,7 @@
     <Compile Include="Assets\CRAG\Scripts\Objects\Gravity.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\IsometricCamera.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\LookAtTheCamera.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\RandomDirection.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\RandomText.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\RotateAroundPivot.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\RotateAroundSun.cs" />
