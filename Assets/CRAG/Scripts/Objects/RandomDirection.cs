@@ -3,8 +3,12 @@ using System.Collections;
 
 namespace CRAG
 {
+    /// <summary>
+    /// Скрипт для рандомно перемещающегося NavMeshAgent
+    /// </summary>
     public class RandomDirection : MonoBehaviour
     {
+        /// <summary>Объект, отмечающий границу возможного перемещения</summary>
         public Transform limit;
 
         private NavMeshAgent _agent;

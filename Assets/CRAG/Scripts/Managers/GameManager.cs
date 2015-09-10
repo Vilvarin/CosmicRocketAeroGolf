@@ -56,6 +56,7 @@ namespace CRAG
         public void GameOver()
         {
             InputHandler.instance.playerState = false;
+            player.GetComponent<DestructurableObject>().Boom();
             Destroy(player.gameObject);
             UIManager.instance.ShowGameOverPanel();
         }

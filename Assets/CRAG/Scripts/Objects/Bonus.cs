@@ -24,7 +24,7 @@ namespace CRAG
         {
             if (other.transform.name == "Player")
             {
-                GameManager.instance.points++;
+                GameManager.instance.points += points;
                 Destroy(gameObject);
             }
         }
