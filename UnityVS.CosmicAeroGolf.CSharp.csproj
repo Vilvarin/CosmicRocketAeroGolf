@@ -88,6 +88,9 @@
     <Compile Include="Assets\CRAG\InputSystem\Commands\SpacebarCommand.cs" />
     <Compile Include="Assets\CRAG\InputSystem\Commands\ZoomCamCommand.cs" />
     <Compile Include="Assets\CRAG\InputSystem\InputHandler.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Audio\ClipPlayer.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Audio\AudioStorage.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Audio\ReboundSound.cs" />
     <Compile Include="Assets\CRAG\Scripts\Creators\AsteroidsCreator.cs" />
     <Compile Include="Assets\CRAG\Scripts\Creators\BonusCreator.cs" />
     <Compile Include="Assets\CRAG\Scripts\Creators\CometCreator.cs" />
@@ -96,13 +99,13 @@
     <Compile Include="Assets\CRAG\Scripts\Objects\Bonus.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\DestroyerObject.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\DestroyerPlayer.cs" />
-    <Compile Include="Assets\CRAG\Scripts\Objects\DisappearedOnTime.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\DestructurableObject.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\DisappearedOnCollision.cs" />
+    <Compile Include="Assets\CRAG\Scripts\Objects\DisappearedOnTime.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\GameActor.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\Gravity.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\IsometricCamera.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\LookAtTheCamera.cs" />
-    <Compile Include="Assets\CRAG\Scripts\Objects\DestructurableObject.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\RandomDirection.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\RandomText.cs" />
     <Compile Include="Assets\CRAG\Scripts\Objects\RotateAroundPivot.cs" />

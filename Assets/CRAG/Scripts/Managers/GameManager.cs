@@ -5,10 +5,8 @@ using CRAG.InputSystem;
 namespace CRAG
 {
     /// <summary>
-    /// Одиночка. Отвечает за начало и конец игры.
+    /// Одиночка. Отвечает за начало и конец игры. И случайно за звуки.
     /// </summary>
-    /// <remarks>Единственная причина в том, что класс не статический,
-    /// необходимость закинуть префаб с игроком, чтобы вовремя его уничтожать.</remarks>
     public class GameManager : MonoBehaviour {
         public static GameManager instance;
 
@@ -17,6 +15,8 @@ namespace CRAG
 
         /// <summary>Бонусные очки, заработанный игроком</summary>
         [HideInInspector] public int points = 0;
+
+        private ClipPlayer _audio;
 
         void Awake()
         {
@@ -29,6 +29,13 @@ namespace CRAG
         void Start()
         {
             UIManager.instance.ShowStartPanel();
+            _audio = GetComponent<ClipPlayer>();
+            AchievementSystem.AchievementManager.instance.achievementUnlockedAction += PlayAchievementClip;
+        }
+
+        private void PlayAchievementClip(object sender, AchievementSystem.AchievementEventArgs e)
+        {
+            _audio.Play(AudioStorage.instance.achievement);
         }
 
         /// <summary>
@@ -48,6 +55,7 @@ namespace CRAG
             InputHandler.instance.playerState = false;
             Destroy(player.gameObject);
             UIManager.instance.ShowWinPanel();
+            _audio.Play(AudioStorage.instance.fanfare);
         }
 
         /// <summary>
@@ -59,6 +67,30 @@ namespace CRAG
             player.GetComponent<DestructurableObject>().Boom();
             Destroy(player.gameObject);
             UIManager.instance.ShowGameOverPanel();
+            _audio.Play(AudioStorage.instance.destroyPlayer);
+        }
+
+        /// <summary>
+        /// Вызвать при сборе бонуса.
+        /// Проигрывает звук.
+        /// </summary>
+        /// <param name="name">Имя собранного бонуса</param>
+        public void CollectBonus(string name)
+        {
+            switch (name)
+            {
+                case "Monet(Clone)":
+                    _audio.Play(AudioStorage.instance.coins);
+                    break;
+                case "UFO":
+                    _audio.Play(AudioStorage.instance.ufo);
+                    break;
+            }
+        }
+
+        void OnDestroy()
+        {
+            AchievementSystem.AchievementManager.instance.achievementUnlockedAction -= PlayAchievementClip;
         }
     }
 }

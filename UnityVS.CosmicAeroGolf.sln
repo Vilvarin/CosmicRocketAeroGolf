@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.CosmicAeroGolf.CSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.CosmicAeroGolf.CSharp.Editor", "UnityVS.CosmicAeroGolf.CSharp.Editor.csproj", "{C864442F-6FE8-515B-ED5C-47424335007F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Robots.CSharp", "..\Robots\UnityVS.Robots.CSharp.csproj", "{B3DEF3FC-DD41-D03C-EA89-66FA86D0291D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{C864442F-6FE8-515B-ED5C-47424335007F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C864442F-6FE8-515B-ED5C-47424335007F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C864442F-6FE8-515B-ED5C-47424335007F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3DEF3FC-DD41-D03C-EA89-66FA86D0291D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3DEF3FC-DD41-D03C-EA89-66FA86D0291D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3DEF3FC-DD41-D03C-EA89-66FA86D0291D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3DEF3FC-DD41-D03C-EA89-66FA86D0291D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

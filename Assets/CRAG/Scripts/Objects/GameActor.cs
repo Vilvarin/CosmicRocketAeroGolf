@@ -23,11 +23,13 @@ namespace CRAG
         private Rigidbody _rigidbody;
         private RandomText _randomText;
         private bool _onOrbitState = false;
+        private ClipPlayer _audio;
 
         void Start()
         {
             _transform = GetComponent<Transform>();
             _rigidbody = GetComponent<Rigidbody>();
+            _audio     = GetComponent<ClipPlayer>();
         }
 
         /// <summary>
@@ -39,6 +41,7 @@ namespace CRAG
             Vector3 forceDirection = CalculateForceDirection(out hit);
             Instantiate(click, hit.point, Quaternion.identity);
             _rigidbody.AddForce(forceDirection * forceMagnitude, ForceMode.Impulse);
+            _audio.Play(AudioStorage.instance.impulse);
         }
 
         /// <summary>

@@ -24,16 +24,15 @@ namespace CRAG
         {
             if (other.transform.name == "Player")
             {
+                GameManager.instance.CollectBonus(gameObject.name);
                 GameManager.instance.points += points;
+                
+                countBonuses--;
+
+                if (countBonuses <= 0)
+                    AchievementManager.instance.UnlockAchievement(Achievements.CollectAllCoins);
                 Destroy(gameObject);
             }
-        }
-
-        void OnDestroy()
-        {
-            countBonuses--;
-            if (countBonuses <= 0)
-                AchievementManager.instance.UnlockAchievement(Achievements.CollectAllCoins); //открыть ачивку при сборе всех монеток
         }
     }
 }
