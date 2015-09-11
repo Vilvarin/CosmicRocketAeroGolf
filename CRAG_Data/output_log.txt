@@ -1,0 +1,41 @@
+Initialize engine version: 5.1.1f1 (2046fc06d4d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Vendor:   NVIDIA
+    VRAM:     1990 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.121 seconds
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Public\Documents\Unity Projects\CosmicAeroGolf\CRAG_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: e7c -> priority: 1 
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.634869 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1292.
+Total: 0.459105 ms (FindLiveObjects: 0.042078 ms CreateObjectMapping: 0.043105 ms MarkObjects: 0.356473 ms  DeleteObjects: 0.017105 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.168289 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1292.
+Total: 0.473815 ms (FindLiveObjects: 0.073894 ms CreateObjectMapping: 0.066368 ms MarkObjects: 0.325684 ms  DeleteObjects: 0.007526 ms)
+

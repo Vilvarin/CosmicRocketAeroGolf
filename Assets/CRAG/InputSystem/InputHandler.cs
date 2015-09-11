@@ -19,10 +19,24 @@ namespace CRAG.InputSystem
         ///<summary>Переключатель для состояния, в котором игровой персонаж в состоянии исполнять команды.</summary>
         [HideInInspector] public bool playerState = true;
 
-        /// <summary>Список команд выполняемых в Update()</summary>
-        private List<ICommand> _updateCommands = new List<ICommand>();
-        ///<summary>Список команд выполняемых в FixedUpdate()</summary>
-        private List<ICommand<GameActor>> _fixCommands = new List<ICommand<GameActor>>();
+        //Команды игрока
+        private ICommand<GameActor> _leftMouseButtonDown  = new ImpulseCommand();
+        private ICommand<GameActor> _rightMouseButtonDown = new EnterCommand();
+        private ICommand<GameActor> _rightMouseButtonUp   = new DescendCommand();
+        
+        //Состояния для обработки в FixedUpdate()
+        private bool _impulseState = false;
+        private bool _enterstate   = false;
+        private bool _descendState = false;
+ 
+        //Команды игры
+        private ICommand _escapeButton = new ExitCommand();
+        private ICommand _rButton      = new RestartCommand();
+        private ICommand _spaceButton  = new ClosePanelCommand();
+
+        //Команды камеры
+        private ICommand<IsometricCamera> _scrollUp = new ZoomCamCommand(1f);
+        private ICommand<IsometricCamera> _scrollDown = new ZoomCamCommand(-1f);
 
         void Awake()
         {
@@ -32,57 +46,49 @@ namespace CRAG.InputSystem
                 Destroy(gameObject);
         }
 
-        void ExecuteCamCommand()
+        void Update()
         {
-            if (Input.GetAxis("Mouse ScrollWheel") != 0)
-                new ZoomCamCommand(Input.GetAxis("Mouse ScrollWheel")).Execute(cam);
-        }
-
-        void AddUpdateCommand()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                _updateCommands.Add(new ClosePanelCommand());
-            if (Input.GetKeyDown(KeyCode.R))
-                _updateCommands.Add(new RestartCommand());
             if (Input.GetKeyDown(KeyCode.Escape))
-                _updateCommands.Add(new ExitCommand());
-        }
+                _escapeButton.Execute();
+            if (Input.GetKeyDown(KeyCode.R))
+                _rButton.Execute();
+            if (Input.GetKeyDown(KeyCode.Space))
+                _spaceButton.Execute();
 
-        void AddFixedUpdateCommand()
-        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+                _scrollUp.Execute(cam);
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+                _scrollDown.Execute(cam);
+            
             if (playerState)
             {
                 if (Input.GetMouseButtonDown(0))
-                    _fixCommands.Add(new ImpulseCommand());
+                    _impulseState = true;
                 if (Input.GetMouseButtonDown(1))
-                    _fixCommands.Add(new EnterCommand());
+                    _enterstate   = true;
                 if (Input.GetMouseButtonUp(1))
-                    _fixCommands.Add(new DescendCommand());
+                    _descendState = true;
             }
-        }
-
-        //Добавление комманды в список позволяет выполнить 
-        //несколько команд в течении одного кадра.
-        //Ради отзывчивого управления.
-        void Update()
-        {
-            AddUpdateCommand();
-            AddFixedUpdateCommand();
-
-            foreach (ICommand command in _updateCommands)
-                command.Execute();
-
-            ExecuteCamCommand();
-
-            _updateCommands.Clear(); //Чистим выполненные команды, чтобы не мешались в следующем кадре
         }
 
         void FixedUpdate()
         {
-            foreach (ICommand<GameActor> command in _fixCommands)
-                command.Execute(player);
+            if (_impulseState)
+            {
+                _impulseState = false;
+                _leftMouseButtonDown.Execute(player);
+            }
 
-            _fixCommands.Clear();
+            if (_enterstate)
+            {
+                _enterstate = false;
+                _rightMouseButtonDown.Execute(player);
+            }
+            if (_descendState)
+            {
+                _descendState = false;
+                _rightMouseButtonUp.Execute(player);
+            }
         }
     }
 }
